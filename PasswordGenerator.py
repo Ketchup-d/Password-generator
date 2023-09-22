@@ -80,16 +80,15 @@ def txt(nothing=0):
         lengtherror.destroy()
         lengtherror = 0
 
-    if copy2clip != 0:
-        copy2clip.destroy()
-        copy2clip = 0
-
     try:
         if textpassword:
             password = textpassword.get("1.0", tk.END)
             with open("password.txt", "w") as txt:
                 txt.write(password)
         else:
+            if copy2clip != 0:
+                copy2clip.destroy()
+                copy2clip = 0
             if theme.cget("image") == "pyimage2":
                 nopassworderror = tk.Label(frame_error,
                                            text="Please generate a password first", font=font12, fg="#1A1A1A")
@@ -98,6 +97,9 @@ def txt(nothing=0):
                                            text="Please generate a password first", font=font12, fg="#f0f0f0",  bg="#1A1A1A")
             nopassworderror.pack(pady=20)
     except Exception:
+        if copy2clip != 0:
+            copy2clip.destroy()
+            copy2clip = 0
         if theme.cget("image") == "pyimage2":
             nopassworderror = tk.Label(frame_error,
                                        text="Please generate a password first", font=font12, fg="#1A1A1A")
