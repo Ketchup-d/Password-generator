@@ -1,5 +1,5 @@
-# tkinter password generator
-You can generate VERY STRONG passwords with this tkinter application, and besides that it has some cool features!
+# Password generator
+You can generate VERY STRONG passwords with this cool Tkinter application, and besides that it has some cool features!
 
 ## Feutures
 - Light/Dark mode toggle
